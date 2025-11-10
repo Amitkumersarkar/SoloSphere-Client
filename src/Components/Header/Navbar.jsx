@@ -24,7 +24,7 @@ const Navbar = () => {
 
                     {!user && (
                         <li>
-                            <Link to='/login'>Login</Link>
+                            <Link to='/sign-in'>SignIn</Link>
                         </li>
                     )}
                 </ul>
@@ -46,7 +46,7 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className='menu menu-sm dropdown-content mt-3 `z-[1]` p-2 shadow bg-base-100 rounded-box w-52'
+                            className='menu menu-sm dropdown-content mt-3 `z-[1] p-2 shadow bg-base-100 rounded-box w-52'
                         >
                             <li>
                                 <Link to='/add-job' className='justify-between'>
