@@ -17,9 +17,9 @@ export default function TabCategories() {
             </div>
             <div className="flex items-center justify-center">
                 <TabList>
-                    <Tab>Web</Tab>
-                    <Tab>Graphics</Tab>
-                    <Tab>Digital</Tab>
+                    <Tab>Web Development</Tab>
+                    <Tab>Graphics Design</Tab>
+                    <Tab>Digital Marketing</Tab>
                 </TabList>
             </div>
 
