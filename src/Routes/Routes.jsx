@@ -8,27 +8,33 @@ import JobDetails from "../Pages/JobsDetails/JobDetails";
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <MainLayout></MainLayout>,
+        element: <MainLayout />,
         children: [
             {
                 path: '/',
-                element: <Home></Home>,
-                // loader: () => fetch(`${import.meta.env.VITE_API_URL}/jobs`)
+                element: <Home />,
             },
             {
                 path: '/sign-in',
-                element: <SignIn></SignIn>
+                element: <SignIn />
             },
             {
                 path: '/sign-up',
-                element: <SignUp></SignUp>
+                element: <SignUp />
             },
             {
                 path: '/job/:id',
-                element: <JobDetails></JobDetails>
+                element: <JobDetails />,
+                loader: async ({ params }) => {
+                    const res = await fetch(`${import.meta.env.VITE_API_URL}/job/${params.id}`);
+                    if (!res.ok) {
+                        throw new Response('Failed to load job data', { status: res.status });
+                    }
+                    return res.json();
+                }
             }
         ]
     }
-])
+]);
 
 export default router;
